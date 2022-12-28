@@ -10,7 +10,7 @@ function Index({ orders, products }) {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+      const res = await fetch(`${process.env.SERVER_URL}/api/products/${id}`, {
         method: "DELETE",
       });
       setPizzaList(pizzaList.filter((pizza) => pizza._id !== id));
@@ -26,7 +26,7 @@ function Index({ orders, products }) {
     console.log("ran across currentStatus ", currentStatus);
 
     try {
-      const res = await fetch(`http://localhost:3000/api/orders/${id}`, {
+      const res = await fetch(`${process.env.SERVER_URL}/api/orders/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: currentStatus + 1 }),

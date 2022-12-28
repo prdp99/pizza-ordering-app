@@ -26,7 +26,7 @@ function Cart() {
   const createOrder = async (data) => {
     try {
       console.log("data", data);
-      const res = await fetch("http://localhost:3000/api/orders", {
+      const res = await fetch(`${process.env.SERVER_URL}/api/orders`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
