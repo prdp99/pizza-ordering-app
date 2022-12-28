@@ -63,3 +63,12 @@
   top: 2%;
   right: 2%;
 }
+@media (prefers-color-scheme: dark) {
+  .container {
+    color: black;
+  }
+  .input {
+    background-color: white;
+    color: black;
+  }
+}
