@@ -1,0 +1,148 @@
+.container {
+  padding: 50px;
+  display: flex;
+}
+.left {
+  flex: 2;
+}
+.right {
+  flex: 1;
+}
+
+.imgContainer {
+  width: 7rem;
+  height: 7rem;
+  position: relative;
+}
+
+.table {
+  /* width: 100%; */
+  border-spacing: 20px;
+}
+.name {
+  font-weight: 500;
+  color: #d1411e;
+  font-size: 18px;
+}
+
+.total {
+  font-weight: 500;
+  font-size: 18px;
+}
+.wrapper {
+  width: 90%;
+  max-height: 285px;
+  background-color: #333;
+  padding: 50px;
+  padding-top: 10px;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  /* overflow: hidden; */
+}
+.totalTextTitle {
+  margin-right: 10px;
+}
+.button {
+  cursor: pointer;
+  padding: 0.5em 0.4em;
+  margin-top: 1em;
+  /* width: 12rem; */
+  border-radius: 0.3em;
+  font-size: 1em;
+  text-align: center;
+  background-color: tomato;
+  color: white;
+  font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .trTitle {
+    display: none;
+  }
+  .tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .imgContainer {
+    width: 35vw;
+    height: 35vw;
+  }
+  .name,
+  .total {
+    font-size: 24px;
+  }
+  .extras,
+  .price,
+  .quantity {
+    font-size: 22px;
+    position: relative;
+  }
+  .price::before {
+    content: "Price: ";
+    font-weight: 500;
+  }
+  .quantity::before {
+    content: "Quantity: ";
+    font-weight: 500;
+  }
+  .total::before {
+    content: "Total: ";
+    font-weight: 500;
+  }
+  .wrapper {
+    width: 100%;
+  }
+}
+
+.paymentMethods {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.methodWrapper {
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.payButton {
+  cursor: pointer;
+  width: 12.6rem;
+  padding: 0.5em 0.4em;
+  border-radius: 0.3em;
+  font-size: 1em;
+  text-align: center;
+  margin-bottom: 5px;
+  background-color: tomato;
+  color: white;
+  font-weight: bold;
+}
+.payButton:hover,
+.button:hover {
+  filter: brightness(0.9);
+}
+@media (prefers-color-scheme: dark) {
+  .paymentMethods {
+    color-scheme: light;
+  }
+}
+.paypalBtn {
+  width: 12.4rem;
+}

@@ -1,0 +1,28 @@
+.container {
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  height: 2rem;
+  margin-bottom: 1.2rem;
+  padding: 0 0.5rem;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 0.7rem;
+  background-color: teal;
+  cursor: pointer;
+}
+.error {
+  margin-top: 0.4rem;
+  font-size: 1rem;
+  color: red;
+}
