@@ -41,6 +41,7 @@ function Cart() {
   };
 
   const ButtonWrapper = ({ currency, showSpinner }) => {
+    const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
     useEffect(() => {
       dispatch({
         type: "resetOptions",
