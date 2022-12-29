@@ -6,7 +6,6 @@ function Index({ orders, products }) {
   const [pizzaList, setPizzaList] = useState(products);
   const [orderList, setOrderList] = useState(orders);
   const status = ["preparing", "on the way", "delivered"];
-  console.log("so this is the order we goft", orderList);
 
   const handleDelete = async (id) => {
     try {
@@ -19,18 +18,18 @@ function Index({ orders, products }) {
     }
   };
   const handleStatus = async (id) => {
-    console.log("okay next stage button clcked ", id);
     const item = orderList.filter((order) => order._id === id)[0];
-    console.log("ran across filter ", id);
     const currentStatus = item.status;
     console.log("ran across currentStatus ", currentStatus);
 
     try {
-      const res = await fetch(`${process.env.SERVER_URL}/api/orders/${id}`, {
+      console.log("fetching started");
+      const res = await fetch(`/api/orders/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: currentStatus + 1 }),
       });
+      console.log("res started", res);
       const data = await res.json();
       setOrderList([data, ...orderList.filter((order) => order._id !== id)]);
     } catch (err) {
@@ -54,8 +53,13 @@ function Index({ orders, products }) {
           {pizzaList.map((product) => (
             <tbody key={product._id}>
               <tr className={styles.trTitle}>
-                <td>
-                  <Image src={product.img} alt="" width={200} height={200} />
+                <td className={styles.image}>
+                  <Image
+                    src={product.img}
+                    alt=""
+                    fill
+                    styles={{ objectFit: "contain" }}
+                  />
                 </td>
                 <td>{product._id.slice(0, 5)}..</td>
                 <td>{product.title}</td>

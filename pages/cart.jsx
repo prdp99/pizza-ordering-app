@@ -9,7 +9,6 @@ import {
   PayPalButtons,
   usePayPalScriptReducer,
 } from "@paypal/react-paypal-js";
-import axios from "axios";
 import OrderDetail from "../components/OrderDetail";
 
 function Cart() {
@@ -24,9 +23,10 @@ function Cart() {
   const router = useRouter();
 
   const createOrder = async (data) => {
+    console.log("oder creating");
     try {
       console.log("data", data);
-      const res = await fetch(`${process.env.SERVER_URL}/api/orders`, {
+      const res = await fetch(`/api/orders`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

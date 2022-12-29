@@ -1,5 +1,6 @@
 import cookie from "cookie";
 const handler = (req, res) => {
+  console.log("req came form forntend");
   console.log("req came", req.body.password);
   console.log("req came", req.body.username);
   if (req.method === "POST") {

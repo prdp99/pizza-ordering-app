@@ -1,9 +1,11 @@
+import Router, { useRouter } from "next/router";
 import styles from "../styles/OrderDetail.module.css";
 import { useState } from "react";
 
 function OrderDetail({ total, createOrder, setCash }) {
   const [customer, setCustomer] = useState("");
   const [address, setAddress] = useState("");
+  const navigate = useRouter();
 
   const handleClick = () => {
     createOrder({ customer, address, total, method: 0 });

@@ -7,8 +7,10 @@ const Login = () => {
   const [error, setError] = useState(false);
   const router = useRouter();
   const handleClick = async () => {
+    console.log("fetching started");
+
     try {
-      const res = await fetch(`${process.env.SERVER_URL}/api/login`, {
+      const res = await fetch(`/api/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -21,6 +23,7 @@ const Login = () => {
         console.log("returned true 200");
         router.push("/admin");
       } else {
+        console.log("res sonesnt exist");
         setError(true);
       }
     } catch (err) {

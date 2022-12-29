@@ -1,6 +1,10 @@
 .container {
-  padding: 50px;
+  padding: 3em;
   display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  overflow: hidden;
+  padding: 2em;
 }
 
 .item {
@@ -8,19 +12,25 @@
 }
 .table {
   width: 100%;
-  border-spacing: 20px;
+  border-spacing: 1em;
   text-align: left;
 }
 .button {
   border: none;
   color: white;
-  padding: 5px;
+  padding: 0.3em;
   cursor: pointer;
 }
 .button:first-child {
   background-color: teal;
-  margin-right: 10px;
+  margin-right: 0.5em;
 }
 .button:last-child {
   background-color: red;
+}
+.image {
+  width: 3rem;
+  height: 3rem;
+  overflow: hidden;
+  position: relative;
 }
