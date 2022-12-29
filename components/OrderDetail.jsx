@@ -14,7 +14,7 @@ function OrderDetail({ total, createOrder, setCash }) {
         <div className={styles.close} onClick={() => setCash(false)}>
           X
         </div>
-        <h2 className={styles.title}>You will pay $12 after delivery</h2>
+        <h2 className={styles.title}>You will pay ${total} after delivery</h2>
         <div className={styles.item}>
           <label className={styles.label}>Name Surname </label>
           <input
