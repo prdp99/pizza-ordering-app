@@ -4,7 +4,11 @@ import { useState, useRef } from "react";
 function Featured() {
   const [index, setIndex] = useState(0);
 
-  const images = ["/img/featured-o.png", "/img/second.png", "/img/third-o.png"];
+  const images = [
+    "/img/featured-oo.png",
+    "/img/second.png",
+    "/img/third-o.png",
+  ];
   const handleArrow = (direction) => {
     if (direction === "1") {
       setIndex(index !== 0 ? index - 1 : 2);
