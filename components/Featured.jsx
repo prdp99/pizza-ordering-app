@@ -4,11 +4,7 @@ import { useState, useRef } from "react";
 function Featured() {
   const [index, setIndex] = useState(0);
 
-  const images = [
-    "/img/first.gif",
-    "/img/second-gif.gif",
-    "/img/third-gif.gif",
-  ];
+  const images = ["/img/featured-o.png", "/img/second.png", "/img/third-o.png"];
   const handleArrow = (direction) => {
     if (direction === "1") {
       setIndex(index !== 0 ? index - 1 : 2);
@@ -46,7 +42,6 @@ function Featured() {
                 fill="container"
                 style={{ objectFit: "contain" }}
               />
-              
             </div>
           );
         })}
